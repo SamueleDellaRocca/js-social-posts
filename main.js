@@ -105,7 +105,7 @@ for (let index = 0; index < posts.length; index++) {
 const btnMiPiace = document.querySelectorAll('.js-like-button');
 // CREO LA FUNZIONE PER CAMBIARE LA SCRITTA IN VERDE E LA APPLICO AD OGNI BTN CON UN CICLO FOR
 function funzioneLike() {
-    this.style.color = 'green';
+    this.classList.add('like-button--liked');
     event.preventDefault();
     addLike(0);
 }
