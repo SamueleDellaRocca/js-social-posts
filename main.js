@@ -107,11 +107,18 @@ const btnMiPiace = document.querySelectorAll('.js-like-button');
 function funzioneLike() {
     this.style.color = 'green';
     event.preventDefault();
+    addLike(0);
 }
-
 
 for (let index = 0; index < btnMiPiace.length; index++) {
     btnMiPiace[index].addEventListener('click', funzioneLike);
 }
 
+// FUNZIONE PER AGGIUNGERE I LIKE
+const divLike = document.querySelector('.likes__counter');
+console.log(divLike);
 
+function addLike(indicePost) {
+    let newLike = posts[indicePost].likes += 1;
+    divLike.innerHTML = `Piace a <b id="like-counter-1" class="js-likes-counter">${newLike}</b> persone`;
+}
