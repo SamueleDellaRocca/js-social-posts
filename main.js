@@ -56,8 +56,9 @@ const posts = [
     }
 ];
 
+//SELEZIONO IL CONTAINER
 const divContainer = document.getElementById('container');
-
+// FUNZIONE PER CREARE POST IN HTML
 function creaPost(objectPost) {
     const divPost = document.createElement('div');
     divPost.classList.add('post');
@@ -91,10 +92,26 @@ function creaPost(objectPost) {
                 </div> 
             </div>            
     `
-
     divContainer.append(divPost);
 }
 
+// APPLICO LA FUNZIONE AD OGNI OGGETTO DELL ARRAY
 for (let index = 0; index < posts.length; index++) {
     creaPost(posts[index]);
 }
+
+
+//SELEZIONO IL BTNMIPIACE
+const btnMiPiace = document.querySelectorAll('.js-like-button');
+// CREO LA FUNZIONE PER CAMBIARE LA SCRITTA IN VERDE E LA APPLICO AD OGNI BTN CON UN CICLO FOR
+function funzioneLike() {
+    this.style.color = 'green';
+    event.preventDefault();
+}
+
+
+for (let index = 0; index < btnMiPiace.length; index++) {
+    btnMiPiace[index].addEventListener('click', funzioneLike);
+}
+
+
