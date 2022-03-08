@@ -120,7 +120,7 @@ const divLike = document.querySelectorAll('.likes__counter');
 console.log(divLike);
 
 function addLike(indicePost) {
-    let newLike = posts[indicePost].likes += 1;
+    let newLike = posts[indicePost].likes + 1;
     divLike[indicePost].innerHTML = `Piace a <b id="like-counter-1" class="js-likes-counter">${newLike}</b> persone`;
 }
 
