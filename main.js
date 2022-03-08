@@ -107,7 +107,7 @@ const btnMiPiace = document.querySelectorAll('.js-like-button');
 function funzioneLike() {
     this.classList.add('like-button--liked');
     event.preventDefault();
-    addLike(0);
+    addLike(1);
 }
 
 for (let index = 0; index < btnMiPiace.length; index++) {
@@ -115,10 +115,10 @@ for (let index = 0; index < btnMiPiace.length; index++) {
 }
 
 // FUNZIONE PER AGGIUNGERE I LIKE
-const divLike = document.querySelector('.likes__counter');
+const divLike = document.querySelectorAll('.likes__counter');
 console.log(divLike);
 
 function addLike(indicePost) {
     let newLike = posts[indicePost].likes += 1;
-    divLike.innerHTML = `Piace a <b id="like-counter-1" class="js-likes-counter">${newLike}</b> persone`;
+    divLike[indicePost].innerHTML = `Piace a <b id="like-counter-1" class="js-likes-counter">${newLike}</b> persone`;
 }
