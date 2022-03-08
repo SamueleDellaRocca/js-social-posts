@@ -107,7 +107,8 @@ const btnMiPiace = document.querySelectorAll('.js-like-button');
 function funzioneLike() {
     this.classList.add('like-button--liked');
     event.preventDefault();
-    addLike(1);
+    addLike(0);
+    addIdArray(0);
 }
 
 for (let index = 0; index < btnMiPiace.length; index++) {
@@ -121,4 +122,18 @@ console.log(divLike);
 function addLike(indicePost) {
     let newLike = posts[indicePost].likes += 1;
     divLike[indicePost].innerHTML = `Piace a <b id="like-counter-1" class="js-likes-counter">${newLike}</b> persone`;
+}
+
+
+//FUNZIONE PER AGGIUNGERE GLI ID IN UN ARRAY
+const arrayId = [];
+
+function addIdArray(indicePost) {
+    if (arrayId.includes(posts[indicePost].id)) {
+
+    } else {
+        arrayId.push(posts[indicePost].id);
+        console.log(arrayId);
+    }
+
 }
