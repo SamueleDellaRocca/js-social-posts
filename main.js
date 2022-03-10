@@ -104,15 +104,18 @@ for (let index = 0; index < posts.length; index++) {
 //SELEZIONO IL BTNMIPIACE
 const btnMiPiace = document.querySelectorAll('.js-like-button');
 // CREO LA FUNZIONE PER CAMBIARE LA SCRITTA IN VERDE E LA APPLICO AD OGNI BTN CON UN CICLO FOR
-function funzioneLike() {
-    this.classList.add('like-button--liked');
+function funzioneLike(indiceArrayPost, btnCliccato) {
+    btnCliccato.classList.add('like-button--liked');
     event.preventDefault();
-    addLike(0);
-    addIdArray(0);
+    addLike(indiceArrayPost);
+    addIdArray(indiceArrayPost);
 }
 
+
 for (let index = 0; index < btnMiPiace.length; index++) {
-    btnMiPiace[index].addEventListener('click', funzioneLike);
+    btnMiPiace[index].addEventListener('click', function (event) {
+        funzioneLike(index, this);
+    });
 }
 
 // FUNZIONE PER AGGIUNGERE I LIKE
